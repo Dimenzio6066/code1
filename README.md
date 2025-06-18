@@ -1,2 +1,2 @@
-# code1
-code1
+# Code 1
+This is a cool page
