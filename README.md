@@ -1,7 +1,7 @@
 # Code 1
 This is a cool page :sparkles:
 
-[Here is our HTML Game](/Kris'_Search_for_20Moss/Kris_search%20_for_moss.html)
+[Here is our HTML Game](/Kris'_Search_for_Moss/Kris_search_for_moss.html)
 
 How did we get here?
 
