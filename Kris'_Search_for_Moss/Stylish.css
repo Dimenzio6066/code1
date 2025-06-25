@@ -1,0 +1,16 @@
+@font-face { font-family: Determination; src: url('font\Determination_Mono_Web\DeterminationMonoWebRegular.ttf'); }
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: Determination;
+
+
+  font-size: 20px;
+}
