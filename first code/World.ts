@@ -1,2 +1,2 @@
-let greet: string = "Hello za Warudo";
+let greet:string = "Hello za Warudo";
 console.log(greet);
