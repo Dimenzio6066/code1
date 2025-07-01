@@ -1,16 +1,97 @@
-@font-face { font-family: Determination; src: url('font\Determination_Mono_Web\DeterminationMonoWebRegular.ttf'); }
+@font-face {
+  --font-pixel: "8bitOperatorPlus-Bold", "monospace";
+}
+
 body {
-  background-color: lightblue;
-}
+  background-color: rgb(0, 0, 0);
 
-h1 {
+
   color: white;
-  text-align: center;
+
+
+
+  --font-pixel: "8bitOperatorPlus-Bold", "monospace";
+
+
 }
 
-p {
-  font-family: Determination;
+/* Weiter zum Inhalt
+Du:
+Kannst du mir einen css code geben, um in meiner HTML Webseite dieselbe Font zu benutzen, wie Toby Fox in Deltarune.com?
+ChatGPT:
 
+Für die Deltarune-Webseite verwendet Toby Fox zwei verschiedene Pixel-Schriftarten:
 
-  font-size: 20px;
+    Logo-Schriftart – genannt „Deltarune Regular“, erstellt mit FontStruct (Retro Gaming)
+    reddit.com+15onlinewebfonts.com+15fontmeme.com+15
+
+    Fließtext/Menus – die ebenfalls von ihm genutzte Mono-Pixel-Schrift „8‑bit Operator Plus Bold“, die direkt auf der offiziellen Seite gehostet wird
+    reddit.com+1fontmeme.com+1
+
+Damit deine Webseite diese Fonts nachahmt, kannst du sie via CSS einbinden, wenn du ihre Dateien herunterlädst oder über eine zentrale URL (z. B. CDN).
+🎨 Beispiel-Code: Einbinden der beiden Schriften
+
+/* 1) Deltarune-Logo-Font */
+@font-face {
+  font-family: "DeltaruneLogo";
+  src: url("https://db.onlinewebfonts.com/t/e17c91a180915ab790be0df8ba32654a.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/e17c91a180915ab790be0df8ba32654a.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
+
+/* 2) 8‑bit Operator Plus Bold (Menü-/Fließtext) */
+@font-face {
+  font-family: "8bitOperator";
+  src: url("https://deltarune.com/assets/fonts/8bitOperatorPlus-Bold.woff") format("woff"),
+       url("https://deltarune.com/assets/fonts/8bitOperatorPlus-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Beispielverwendung auf deiner Seite */
+body {
+  font-family: "8bitOperator", monospace;
+}
+
+h1.logo {
+  font-family: "DeltaruneLogo", sans-serif;
+  /* dafür passende Größe (z. B. Pixel-Art-Look) */
+  font-size: 48px;
+}
+
+✅ Schritte zum Einrichten:
+
+    Herunterladen der Schriften
+
+        Deltarune Regular von einer Font-Hosting-Seite (z. B. OnlineWebFonts oder dafont)
+        onlinewebfonts.com+1dafont.com+1
+
+        8-bit Operator Plus Bold direkt von der Deltarune-Seite
+        fontstruct.com+15reddit.com+15fontmeme.com+15
+
+    Dateien ablegen (.woff/.woff2/.ttf) z. B. im Ordner fonts/
+
+    CSS-Datei anpassen
+
+        Pfade in @font-face src auf deine Datei-URL ändern.
+
+        font-family und Gewicht entsprechend verwenden.
+
+    HTML-Klassen vergeben
+
+        Für Überschrift/Logo: <h1 class="logo">Mein Deltarune Logo</h1>
+
+🧠 Hinweis
+
+    Deltarune Regular ist pixelbasiert – optimal wirkt sie mit ganzzahligen font-size-Werten.
+
+    8‑bit Operator kommt typischerweise in Bold zum Einsatz – stell sicher, dass du das korrekt als bold definierst, sonst wirkt es dünn.
+
+Mit diesem Setup ahmst du das Design von Deltarune.com perfekt nach: eine individualisierte Logo-Schrift plus passende Pixeltext-Schrift in Menü und Fließtext. Viel Erfolg beim Stylen! 😊
+
+
+ChatGPT kann Fehler machen. Überprüfe wichtige Informationen. Siehe Cookie-Voreinstellungen.
+Wir verwenden Cookies
+
+Einige Cookies sind für die einwandfreie Funktion dieser Website erforderlich und können nicht deaktiviert werden. Andere helfen uns zu verstehen, wie unser Dienst funktioniert und verwendet wird. Zudem unterstützen sie uns bei unseren Marketingmaßnahmen. Erfahre mehr in unserer Cookie-Richtlinie. Weitere Informationen und Möglichkeiten zur Anpassung der Einstellungen findest du unterCookies verwalten. */
