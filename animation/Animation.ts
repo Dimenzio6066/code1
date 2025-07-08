@@ -34,11 +34,11 @@ namespace Balls {
             document.body.appendChild(ball.element);
 
             balls.push(ball);
-            update();
+            update(0 );
         }
     }
 
-    function update(): void {
+    function update(_time: number): void {
         const timeCurrent: number = Date.now();
         let timeDelta: number = timeCurrent - timePreviousFrame;
         timeDelta /= 1000;
@@ -67,28 +67,28 @@ namespace Balls {
         }
     }
 
-    function checkCollisionAll(): void {
-        for (const a in balls) {
-            console.log(a);
-            for (let b: number = Number(a) + 1; b < balls.length; b++) {
-                console.log(b);
-                checkCollision(Number(a), Number(b));
-            }
-        }
-    }
+    // function checkCollisionAll(): void {
+    //     for (const a in balls) {
+    //         console.log(a);
+    //         for (let b: number = Number(a) + 1; b < balls.length; b++) {
+    //             console.log(b);
+    //             checkCollision(Number(a), Number(b));
+    //         }
+    //     }
+    // }
 
-    function checkCollision(_a: number, _b: number): void {
-        const ballA: Ball = balls[_a];
-        const ballB: Ball = balls[_b];
+    // function checkCollision(_a: number, _b: number): void {
+    //     const ballA: Ball = balls[_a];
+    //     const ballB: Ball = balls[_b];
 
-        const dx: number = ballA.position.x - ballB.position.x;
-        const dy: number = ballA.position.y - ballB.position.y;
-        const distance: number = Math.sqrt(dx * dx + dy * dy);
+    //     const dx: number = ballA.position.x - ballB.position.x;
+    //     const dy: number = ballA.position.y - ballB.position.y;
+    //     const distance: number = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < 30) {
-            console.log("Collision detected between " + _a + " and " + _b);
+    //     if (distance < 30) {
+    //         console.log("Collision detected between " + _a + " and " + _b);
             
-        }
-    }
+    //     }
+    // }
 
 }
