@@ -18,16 +18,15 @@ namespace Balls {
     const balls: Ball[] = [];
     let timePreviousFrame: number = Date.now();
 
-
     const grid: Grid[] = [];
 
     function hndlLoad(): void {
-        for (let i: number = 0; i < 700; i++) {
+        for (let i: number = 0; i < 7; i++) {
             const randomSign = () => (Math.random() < 0.5 ? -1 : 1);
             const ball: Ball = {
                 element: document.createElement("span"),
-                position: { x: 1000 * i * Math.random(), y: 1000 * i * Math.random() },
-                velocity: { 
+                position: { x: 1000 * Math.random(), y: 1000 * Math.random() },
+                velocity: {
                     x: Math.random() * 1000 * randomSign(),
                     y: Math.random() * 1000 * randomSign()
                 }
@@ -35,17 +34,28 @@ namespace Balls {
             document.body.appendChild(ball.element);
 
             balls.push(ball);
+            update();
         }
-        move();
     }
 
-
-    function move(): void {
+    function update(): void {
         const timeCurrent: number = Date.now();
         let timeDelta: number = timeCurrent - timePreviousFrame;
         timeDelta /= 1000;
         console.log("Time Delta: " + timeDelta + " ms");
 
+        move(timeDelta);
+        checkCollisionAll();
+
+        timePreviousFrame = timeCurrent;
+        requestAnimationFrame(update);
+        
+    
+    }
+
+
+
+    function move(timeDelta: number): void {
         for (let ball of balls) {
             ball.position.x += ball.velocity.x * timeDelta;
             ball.position.y += ball.velocity.y * timeDelta;
@@ -55,8 +65,30 @@ namespace Balls {
 
             ball.element.style.transform = "matrix(30, 0, 0, 30," + ball.position.x + ", " + ball.position.y + ")";
         }
-        timePreviousFrame = timeCurrent;
-        // setTimeout(move, 1000 / 30);
-        requestAnimationFrame(move);
     }
+
+    function checkCollisionAll(): void {
+        for (const a in balls) {
+            console.log(a);
+            for (let b: number = Number(a) + 1; b < balls.length; b++) {
+                console.log(b);
+                checkCollision(Number(a), Number(b));
+            }
+        }
+    }
+
+    function checkCollision(_a: number, _b: number): void {
+        const ballA: Ball = balls[_a];
+        const ballB: Ball = balls[_b];
+
+        const dx: number = ballA.position.x - ballB.position.x;
+        const dy: number = ballA.position.y - ballB.position.y;
+        const distance: number = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 30) {
+            console.log("Collision detected between " + _a + " and " + _b);
+            
+        }
+    }
+
 }
