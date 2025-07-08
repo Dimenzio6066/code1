@@ -112,3 +112,4 @@ for (const q of questions) {
 }
 
 alert(`Quiz finished! Your score: ${score}/${questions.length}`);
+crypto.getRandomValues(new Uint8Array(1));

@@ -85,7 +85,7 @@ const questions = [
         question: "Which two popular acronyms can be made with the word Deltarune?",
         answer: "Undertale and Nutdealer",
     },
-
+    // Add 19 more prompt questions here...
 ];
 let score = 0;
 for (const q of questions) {
@@ -100,3 +100,5 @@ for (const q of questions) {
     }
 }
 alert(`Quiz finished! Your score: ${score}/${questions.length}`);
+crypto.getRandomValues(new Uint8Array(1));
+//# sourceMappingURL=Quiz.js.map
